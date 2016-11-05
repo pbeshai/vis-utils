@@ -1,0 +1,32 @@
+{
+  "name": "vis-utils",
+  "version": "1.0.0",
+  "description": "Utility functions for data visualization",
+  "main": "index.js",
+  "author": "Peter Beshai <peter.beshai@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "vis",
+    "visualization",
+    "utilties",
+    "utility",
+    "data",
+    "d3"
+  ],
+  "main": "build/vis-utils.js",
+  "jsnext:main": "index",
+  "homepage": "https://github.com/pbeshai/vis-utils",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pbeshai/vis-utils.git"
+  },
+  "scripts": {
+    "build": "rm -rf build && mkdir build && rollup --config rollup.config.js",
+    "watch": "rollup --config rollup.config.js --watch",
+    "lint": "eslint -c .eslintrc src",
+    "pretest": "npm run build",
+    "test": "tape 'src/**/*-test.js'",
+    "prepublish": "npm run lint && npm run test && uglifyjs build/vis-utils.js -c -m -o build/vis-utils.min.js",
+    "postpublish": "zip -j build/vis-utils.zip -- LICENSE README.md build/vis-utils.js build/vis-utils.min.js"
+  },
+}
