@@ -29,7 +29,7 @@
     "build": "rm -rf build && mkdir build && rollup --config rollup.config.js && npm run babel",
     "watch": "rollup --config rollup.config.js --watch",
     "lint": "eslint -c .eslintrc.js src",
-    "test": "babel-tape-runner 'src/**/*-test.js'",
+    "test": "babel-tape-runner 'src/**/*.test.js' | faucet",
     "prepublish": "npm run lint && npm run test && uglifyjs build/vis-utils.js -c -m -o build/vis-utils.min.js",
     "postpublish": "zip -j build/vis-utils.zip -- LICENSE README.md build/vis-utils.js build/vis-utils.min.js"
   },
@@ -41,6 +41,7 @@
     "eslint": "^3.9.1",
     "eslint-config-airbnb-base": "^9.0.0",
     "eslint-plugin-import": "^2.1.0",
+    "faucet": "^0.0.1",
     "rollup": "^0.36.3",
     "rollup-plugin-babel": "^2.6.1",
     "rollup-plugin-commonjs": "^5.0.5",
