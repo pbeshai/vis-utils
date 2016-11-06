@@ -17,6 +17,9 @@ module.exports = {
     "import/no-named-as-default": 2,
     // breaks on importing d3
     "import/no-extraneous-dependencies": 0,
+    "max-len": [1, 120, { "ignoreComments": true, "ignoreTrailingComments": true, "ignoreUrls": true }],
+    "arrow-body-style": 0,
+    "no-mixed-operators": 0,
   },
   "plugins": [
     "import"
