@@ -6,21 +6,17 @@ A collection of utility functions for helping with data visualization.
 
 ## Development
 
-Get rollup watching for changes and rebuilding
+Run tests
 
-```bash
-npm run watch
+```
+npm run test
 ```
 
-Run a web server in the example directory
+Build the package
 
-```bash
-cd example
-php -S localhost:8000
 ```
-
-Go to http://localhost:8000
-
+npm run build
+```
 
 ## Installing
 
