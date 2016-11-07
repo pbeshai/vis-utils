@@ -9,10 +9,8 @@ const BOTTOM_RIGHT = 1;
  *   - the upper left corner (rx1, ry1)
  *   - the bottom right corner (rx2, ry2)
  *
- * @param {Number} rx1 rectangle left x position
- * @param {Number} ry1 rectangle top y position
- * @param {Number} rx2 rectangle right x position
- * @param {Number} ry2 rectangle bottom y position
+ * @param {Number[][]} rect The rectangle, a pair of two points
+ *    [[x, y], [x, y]]
  * @param {Number} px  point x position
  * @param {Number} py  point y position
  *

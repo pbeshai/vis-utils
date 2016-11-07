@@ -7,6 +7,7 @@ const Y = 1;
  * @param {Number[]} origin [x, y]
  * @param {Number[]} point [x, y]
  * @param {Number} thetaRadians How many rotates to rotate the point around origin
+ *
  * @return {Number[]} The rotated point [x, y]
  */
 export default function rotate(origin, point, thetaRadians) {
