@@ -1,3 +1,8 @@
+const X = 0;
+const Y = 1;
+const TOP_LEFT = 0;
+const BOTTOM_RIGHT = 1;
+
 /**
  * Determines if a point is inside a rectangle. The rectangle is
  * defined by two points:
@@ -13,7 +18,7 @@
  *
  * @return {Boolean} true if the point is inside the rectangle, false otherwise
  */
-export default function rectContains(rx1, ry1, rx2, ry2, px, py) {
-  return rx1 <= px && px <= rx2 &&
-         ry1 <= py && py <= ry2;
+export default function rectContains(rect, px, py) {
+  return rect[TOP_LEFT][X] <= px && px <= rect[BOTTOM_RIGHT][X] &&
+         rect[TOP_LEFT][Y] <= py && py <= rect[BOTTOM_RIGHT][Y];
 }
