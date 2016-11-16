@@ -11,12 +11,11 @@ const BOTTOM_RIGHT = 1;
  *
  * @param {Number[][]} rect The rectangle, a pair of two points
  *    [[x, y], [x, y]]
- * @param {Number} px  point x position
- * @param {Number} py  point y position
+ * @param {Number[]} point The point ([x, y])
  *
  * @return {Boolean} true if the point is inside the rectangle, false otherwise
  */
-export default function rectContains(rect, px, py) {
-  return rect[TOP_LEFT][X] <= px && px <= rect[BOTTOM_RIGHT][X] &&
-         rect[TOP_LEFT][Y] <= py && py <= rect[BOTTOM_RIGHT][Y];
+export default function rectContains(rect, point) {
+  return rect[TOP_LEFT][X] <= point[X] && point[X] <= rect[BOTTOM_RIGHT][X] &&
+         rect[TOP_LEFT][Y] <= point[Y] && point[Y] <= rect[BOTTOM_RIGHT][Y];
 }
