@@ -24,6 +24,178 @@ If you use NPM, `npm install vis-utils`. Otherwise, download the [latest release
 
 ## API Reference
 
-<a href="#rectsOverlap" name="rectsOverlap">#</a> <b>rectsOverlap</b>(TODO)
+- [`extentLimited`](#extentLimited)
+- [`extentMulti`](#extentMulti)
+- [`findClosestSorted`](#findClosestSorted)
+- [`findClosestUnsorted`](#findClosestUnsorted)
+- [`findEqualSorted`](#findEqualSorted)
+- [`findEqualUnsorted`](#findEqualUnsorted)
+- [`rectContains`](#rectContains)
+- [`rectIntersects`](#rectIntersects)
+- [`rotate`](#rotate)
 
-Checks if two rectangles overlap where a rectangle is defined by an `(x, y)` position and a width and height.
+
+### <a href="#extentLimited" name="extentLimited">#</a> extentLimited(array, valueAccessor, minPercentile, maxPercentile)
+
+Compute the extent (min and max) of an array, limiting the min and the max
+by the specified percentiles. Percentiles are values between 0 and 1.
+
+**Parameters**
+- **array** *(Array)* The array to iterate over
+- **[valueAccessor]** *(Function)*  How to read a value in the array *(defaults to identity)*
+- **[minPercentile]** *(Number)*  If provided, limits the min to this percentile value (between 0 and 1).
+  If provided, the data is sorted by taking the difference of the valueAccessor results.
+- **[maxPercentile]** *(Number)*  If provided, limits the max to this percentile value (between 0 and 1).
+  If provided, the data is sorted by taking the difference of the valueAccessor results.
+
+**Returns**
+
+*(Array)* The extent, limited by the min/max percentiles (`[min, max]`)
+
+
+
+### <a href="#extentMulti" name="extentMulti">#</a> extentMulti(outerArray, valueAccessor, arrayAccessor,
+    minPercentile, maxPercentile)
+
+Compute the extent (min and max) across an array of arrays/objects
+
+For example:
+
+```js
+extentMulti([[4, 3], [1, 2]], d => d);
+> 1, 4
+```
+
+```js
+extentMulti([{ results: [{ x: 4 }, { x: 3 }] }, { results: [{ x: 1 }, { x: 2 }] }],
+  d => d.x, array => array.results);
+> 1, 4
+```
+
+**Parameters**
+- **outerArray** *(Array)* An array of arrays or objects
+- **[valueAccessor]** *(Function)* How to read a value in the array *(defaults to identity)*
+- **[arrayAccessor]** *(Function)* How to read an inner array (defaults to identity)
+- **[minPercentile]** *(Number)* If provided, limits the min to this percentile value (between 0 and 1).
+  If provided, the data is sorted by taking the difference of the valueAccessor results.
+- **[maxPercentile]** *(Number)* If provided, limits the max to this percentile value (between 0 and 1).
+  If provided, the data is sorted by taking the difference of the valueAccessor results.
+
+**Returns**
+
+*(Array)* The min and max across the arrays (`[min, max]`)
+
+
+### <a href="#findClosestSorted" name="findClosestSorted">#</a> findClosestSorted(array, value, accessor)
+
+Helper function to compute distance and find the closest item
+Since it assumes the data is sorted, it does a binary search O(log n)
+
+**Parameters**
+
+- **array** *(Array)* the input array to search
+- **value** *(Number)* the value to match against (typically pixels)
+- **accessor** *(Function)* applied to each item in the array to get equivalent
+  value to compare against
+
+**Returns**
+
+*(Any)* The item in the array that is closest to `value`
+
+
+### <a href="#findClosestUnsorted" name="findClosestUnsorted">#</a> findClosestUnsorted(array, value, accessor)
+
+Helper function to compute distance and find the closest item
+Since it assumes the data is unsorted, it does a linear scan O(n).
+
+**Parameters**
+
+- **array** *(Array)* the input array to search
+- **value** *(Number)* the value to match against (typically pixels)
+- **accessor** *(Function)* applied to each item in the array to get equivalent
+  value to compare against
+
+**Returns**
+
+*(Any)* The item in the array that is closest to `value`
+
+
+
+### <a href="#findEqualSorted" name="findEqualSorted">#</a> findEqualSorted(array, value, accessor)
+
+Helper function to find the item that matches this value.
+Since it assumes the data is sorted, it does a binary search O(log n)
+
+**Parameters**
+- **array** *(Array)* the input array to search
+- **value** *(Number)* the value to match against (typically pixels)
+- **accessor** *(Function)* applied to each item in the array to get equivalent
+  value to compare against
+
+**Returns**
+
+*(Any)* The item in the array that has this value or null if not found
+
+
+### <a href="#findEqualUnsorted" name="findEqualUnsorted">#</a> findEqualUnsorted(array, value, accessor)
+
+Helper function to find the item that matches this value.
+Since it assumes the data is unsorted, it does a linear scan O(n).
+
+**Parameters**
+- **array** *(Array)* the input array to search
+- **value** *(Number)* the value to match against (typically pixels)
+- **accessor** *(Function)* applied to each item in the array to get equivalent
+  value to compare against
+
+**Returns**
+
+*(Any)* The item in the array that has this value or null if not found
+
+### <a href="#rectContains" name="rectContains">#</a> rectContains(rect, point)
+
+Determines if a point is inside a rectangle. The rectangle is
+defined by two points `[[rx1, ry1], [rx2, ry2]]`.
+  - the upper left corner (rx1, ry1)
+  - the bottom right corner (rx2, ry2)
+
+**Parameters**
+
+- **rect** *(Number[][])* The rectangle, a pair of two points
+   [[x, y], [x, y]]
+- **point** *(Number[])* The point ([x, y])
+
+**Returns**
+
+*(Boolean)* true if the point is inside the rectangle, false otherwise
+
+
+### <a href="#rectIntersects" name="rectIntersects">#</a> rectIntersects(rect1, rect2)
+
+Determines if two rectangles intersect. Here a rectangle is defined
+by its upper left and lower right corners.
+
+**Parameters**
+
+- **rect1** *(Number[][])* The first rectangle, a pair of two points
+   [[x, y], [x, y]]
+- **rect2** *(Number[][])* The second rectangle, a pair of two points
+   [[x, y], [x, y]]
+
+**Returns**
+
+*(Boolean)* true if the rectangles intersect, false otherwise
+
+### <a href="#rotate" name="rotate">#</a> rotate(origin, point, thetaRadians)
+
+Rotate a point ([x, y]) around an origin ([x, y]) by theta radians
+
+**Parameters**
+
+- **origin** *(Number[])* The origin to rotate around [x, y]
+- **point** *(Number[])* The point to rotate [x, y]
+- **thetaRadians** *(Number)* How many radians to rotate the point around origin
+
+**Returns**
+
+*(Number[])* The rotated point [x, y]
