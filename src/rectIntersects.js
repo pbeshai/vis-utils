@@ -7,6 +7,8 @@ const BOTTOM_RIGHT = 1;
  * Determines if two rectangles intersect. Here a rectangle is defined
  * by its upper left and lower right corners.
  *
+ * Note that it is assumed that the top Y value is less than the bottom Y value.
+ *
  * @param {Number[][]} rect1 The first rectangle, a pair of two points
  *    [[x, y], [x, y]]
  * @param {Number[][]} rect2 The second rectangle, a pair of two points

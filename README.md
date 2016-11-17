@@ -158,6 +158,8 @@ defined by two points `[[rx1, ry1], [rx2, ry2]]`.
   - the upper left corner (rx1, ry1)
   - the bottom right corner (rx2, ry2)
 
+Note that it is assumed that the top Y value is less than the bottom Y value.
+
 **Parameters**
 
 - **rect** *(Number[][])* The rectangle, a pair of two points
@@ -173,6 +175,8 @@ defined by two points `[[rx1, ry1], [rx2, ry2]]`.
 
 Determines if two rectangles intersect. Here a rectangle is defined
 by its upper left and lower right corners.
+
+Note that it is assumed that the top Y value is less than the bottom Y value.
 
 **Parameters**
 

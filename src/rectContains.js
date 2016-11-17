@@ -8,6 +8,7 @@ const BOTTOM_RIGHT = 1;
  * defined by two points:
  *   - the upper left corner (rx1, ry1)
  *   - the bottom right corner (rx2, ry2)
+ * Note that it is assumed that the top Y value is less than the bottom Y value.
  *
  * @param {Number[][]} rect The rectangle, a pair of two points
  *    [[x, y], [x, y]]
