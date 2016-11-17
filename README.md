@@ -1,6 +1,7 @@
 # vis-utils
 
 [![npm version](https://badge.fury.io/js/vis-utils.svg)](https://badge.fury.io/js/vis-utils)
+[![Build Status](https://travis-ci.org/pbeshai/vis-utils.svg?branch=master)](https://travis-ci.org/pbeshai/vis-utils)
 
 A collection of utility functions for helping with data visualization.
 
