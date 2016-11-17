@@ -54,8 +54,7 @@ by the specified percentiles. Percentiles are values between 0 and 1.
 
 
 
-### <a href="#extentMulti" name="extentMulti">#</a> extentMulti(outerArray, valueAccessor, arrayAccessor,
-    minPercentile, maxPercentile)
+### <a href="#extentMulti" name="extentMulti">#</a> extentMulti(outerArray, valueAccessor, arrayAccessor, minPercentile, maxPercentile)
 
 Compute the extent (min and max) across an array of arrays/objects
 
