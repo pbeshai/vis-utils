@@ -74,7 +74,7 @@ extentMulti([{ results: [{ x: 4 }, { x: 3 }] }, { results: [{ x: 1 }, { x: 2 }] 
 **Parameters**
 - **outerArray** *(Array)* An array of arrays or objects
 - **[valueAccessor]** *(Function)* How to read a value in the array *(defaults to identity)*
-- **[arrayAccessor]** *(Function)* How to read an inner array (defaults to identity)
+- **[arrayAccessor]** *(Function)* How to read an inner array *(defaults to identity)*
 - **[minPercentile]** *(Number)* If provided, limits the min to this percentile value (between 0 and 1).
   If provided, the data is sorted by taking the difference of the valueAccessor results.
 - **[maxPercentile]** *(Number)* If provided, limits the max to this percentile value (between 0 and 1).
