@@ -1,4 +1,4 @@
-import { extent, quantile } from 'd3-array';
+import { extent, quantile, bisector } from 'd3-array';
 
 /**
  * Compute the extent (min and max) of an array, limiting the min and the max
@@ -25,15 +25,30 @@ export default function extentLimited(array, valueAccessor = d => d, minPercenti
   array.sort((a, b) => valueAccessor(a) - valueAccessor(b));
   let minValue = array[0];
   let maxValue = array[array.length - 1];
+  const bisectValue = bisector(valueAccessor).left;
 
   // limit to minPercentile if passed in
   if (minPercentile != null) {
-    minValue = quantile(array, minPercentile, valueAccessor);
+    // get the value at the percentile
+    const minQuantileValue = quantile(array, minPercentile, valueAccessor);
+    const quantileInsertIndex = Math.max(0, bisectValue(array, minQuantileValue));
+
+    // this may not exist in the array, so find the nearest point to it
+    // and use that.
+    minValue = valueAccessor(array[quantileInsertIndex]);
   }
 
   // limit to maxPercentile if passed in
   if (maxPercentile != null) {
-    maxValue = quantile(array, maxPercentile, valueAccessor);
+    const maxQuantileValue = quantile(array, maxPercentile, valueAccessor);
+    const quantileInsertIndex = Math.min(array.length - 1, bisectValue(array, maxQuantileValue));
+
+    maxValue = valueAccessor(array[quantileInsertIndex]);
+
+    // ensure we do not get a value bigger than the quantile value
+    if (maxValue > maxQuantileValue && quantileInsertIndex > 0) {
+      maxValue = valueAccessor(array[quantileInsertIndex - 1]);
+    }
   }
 
   return [minValue, maxValue];
