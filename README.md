@@ -62,13 +62,13 @@ For example:
 
 ```js
 extentMulti([[4, 3], [1, 2]], d => d);
-> 1, 4
+> [1, 4]
 ```
 
 ```js
 extentMulti([{ results: [{ x: 4 }, { x: 3 }] }, { results: [{ x: 1 }, { x: 2 }] }],
   d => d.x, array => array.results);
-> 1, 4
+> [1, 4]
 ```
 
 **Parameters**
