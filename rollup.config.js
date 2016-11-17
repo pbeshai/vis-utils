@@ -7,7 +7,7 @@ var globals = {
 }
 
 export default {
-  entry: 'index.js',
+  entry: 'src/index.js',
   moduleName: 'visUtils',
   plugins: [
     resolve({
@@ -19,6 +19,7 @@ export default {
     babel({
       // see https://github.com/rollup/rollup/issues/357
       babelrc: false,
+      presets: ['es2015-rollup'],
       exclude: 'node_modules/**'
     }),
   ],
@@ -26,6 +27,5 @@ export default {
   external: Object.keys(globals),
   targets: [
     { format: 'umd', dest: 'build/vis-utils.js' },
-    { format: 'umd', dest: 'example/vis-utils.js' },
   ]
 };

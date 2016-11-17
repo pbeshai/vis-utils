@@ -27,7 +27,6 @@
   "scripts": {
     "babel": "babel src --out-dir lib --ignore test.js",
     "build": "rm -rf build && mkdir build && rollup --config rollup.config.js && npm run babel",
-    "watch": "rollup --config rollup.config.js --watch",
     "lint": "eslint -c .eslintrc.js src",
     "test": "babel-tape-runner 'src/**/*.test.js' | faucet",
     "test:raw": "babel-tape-runner 'src/**/*.test.js'",
