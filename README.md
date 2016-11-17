@@ -185,15 +185,15 @@ by its upper left and lower right corners.
 
 *(Boolean)* true if the rectangles intersect, false otherwise
 
-### <a href="#rotate" name="rotate">#</a> rotate(origin, point, thetaRadians)
+### <a href="#rotate" name="rotate">#</a> rotate(point, thetaRadians, origin)
 
 Rotate a point ([x, y]) around an origin ([x, y]) by theta radians
 
 **Parameters**
 
-- **origin** *(Number[])* The origin to rotate around [x, y]
 - **point** *(Number[])* The point to rotate [x, y]
 - **thetaRadians** *(Number)* How many radians to rotate the point around origin
+- **[origin]** *(Number[])* The origin to rotate around [x, y] *(defaults to [0, 0])*
 
 **Returns**
 
