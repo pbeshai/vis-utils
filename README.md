@@ -94,8 +94,8 @@ Since it assumes the data is sorted, it does a binary search O(log n)
 
 - **array** *(Array)* the input array to search
 - **value** *(Number)* the value to match against (typically pixels)
-- **accessor** *(Function)* applied to each item in the array to get equivalent
-  value to compare against
+- **[accessor]** *(Function)* applied to each item in the array to get equivalent
+  value to compare against *(defaults to identity)*
 
 **Returns**
 
@@ -111,8 +111,8 @@ Since it assumes the data is unsorted, it does a linear scan O(n).
 
 - **array** *(Array)* the input array to search
 - **value** *(Number)* the value to match against (typically pixels)
-- **accessor** *(Function)* applied to each item in the array to get equivalent
-  value to compare against
+- **[accessor]** *(Function)* applied to each item in the array to get equivalent
+  value to compare against *(defaults to identity)*
 
 **Returns**
 
@@ -128,8 +128,8 @@ Since it assumes the data is sorted, it does a binary search O(log n)
 **Parameters**
 - **array** *(Array)* the input array to search
 - **value** *(Number)* the value to match against (typically pixels)
-- **accessor** *(Function)* applied to each item in the array to get equivalent
-  value to compare against
+- **[accessor]** *(Function)* applied to each item in the array to get equivalent
+  value to compare against *(defaults to identity)*
 
 **Returns**
 
@@ -144,8 +144,8 @@ Since it assumes the data is unsorted, it does a linear scan O(n).
 **Parameters**
 - **array** *(Array)* the input array to search
 - **value** *(Number)* the value to match against (typically pixels)
-- **accessor** *(Function)* applied to each item in the array to get equivalent
-  value to compare against
+- **[accessor]** *(Function)* applied to each item in the array to get equivalent
+  value to compare against *(defaults to identity)*
 
 **Returns**
 
