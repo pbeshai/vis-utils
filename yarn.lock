@@ -843,6 +843,10 @@ d3-array@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/d3-array/-/d3-array-1.0.1.tgz#375c02874fcd96c16ed9f1bcf5b4a7be53f358e7"
 
+d3-quadtree:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/d3-quadtree/-/d3-quadtree-1.0.1.tgz#13be025624f110405ed43536c506aaec199ed591"
+
 dashdash@^1.12.0:
   version "1.14.0"
   resolved "https://registry.yarnpkg.com/dashdash/-/dashdash-1.14.0.tgz#29e486c5418bf0f356034a993d51686a33e84141"

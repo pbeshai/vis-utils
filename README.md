@@ -28,6 +28,7 @@ If you use NPM, `npm install vis-utils`. Otherwise, download the [latest release
 - [`extentLimited`](#extentLimited)
 - [`extentMulti`](#extentMulti)
 - [`filterInRect`](#filterInRect)
+- [`filterInRectFromQuadtree`](#filterInRectFromQuadtree)
 - [`findClosestSorted`](#findClosestSorted)
 - [`findClosestUnsorted`](#findClosestUnsorted)
 - [`findEqualSorted`](#findEqualSorted)
@@ -104,6 +105,27 @@ the specified rectangle.
 **Returns**
 
 *(Array)* The subset of the input array that is contained within the rectangle
+
+
+### <a href="#filterInRectFromQuadtree" name="filterInRectFromQuadtree">#</a> filterInRectFromQuadtree(array, rect, x, y)
+
+Filters the elements in the passed in quadtree to those that are contained within
+the specified rectangle.
+
+**Parameters**
+
+- **quadtree** *(Object)* The input data as a d3-quadtree to filter
+- **rect** *(Number)* The rectangle, a pair of two points [[x, y], [x, y]]
+- **x** *(Function)* Function that maps a point in the array to its x value
+ *(defaults to d => d[0])*
+- **y** *(Function)* Function that maps a point in the array to its y value
+ *(defaults to d => d[1])*
+
+**Returns**
+
+*(Array)* The subset of the input data that is contained within the
+ rectangle
+
 
 
 ### <a href="#findClosestSorted" name="findClosestSorted">#</a> findClosestSorted(array, value, accessor)
