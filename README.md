@@ -27,6 +27,7 @@ If you use NPM, `npm install vis-utils`. Otherwise, download the [latest release
 
 - [`extentLimited`](#extentLimited)
 - [`extentMulti`](#extentMulti)
+- [`filterInRect`](#filterInRect)
 - [`findClosestSorted`](#findClosestSorted)
 - [`findClosestUnsorted`](#findClosestUnsorted)
 - [`findEqualSorted`](#findEqualSorted)
@@ -84,6 +85,25 @@ extentMulti([{ results: [{ x: 4 }, { x: 3 }] }, { results: [{ x: 1 }, { x: 2 }] 
 **Returns**
 
 *(Array)* The min and max across the arrays (`[min, max]`)
+
+
+### <a href="#filterInRect" name="filterInRect">#</a> filterInRect(array, rect, x, y)
+
+Filters the elements in the passed in array to those that are contained within
+the specified rectangle.
+
+**Parameters**
+
+- **array** *(Array)* The input array to filter
+- **rect** *(Number[][])* The rectangle, a pair of two points [[x, y], [x, y]]
+- **x** *(Function)* Function that maps a point in the array to its x value
+  *(defaults to d => d[0])*
+- **y** *(Function)* Function that maps a point in the array to its y value
+  *(defaults to d => d[1])*
+
+**Returns**
+
+*(Array)* The subset of the input array that is contained within the rectangle
 
 
 ### <a href="#findClosestSorted" name="findClosestSorted">#</a> findClosestSorted(array, value, accessor)
