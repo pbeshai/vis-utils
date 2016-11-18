@@ -27,7 +27,7 @@ tape('filterInRectFromQuadtree() filters values in the rectangle with accessors'
     { x: 15, y: 12 },
     { x: 30, y: 40 },
     { x: 20, y: 19 },
-    { x: 5, y: 6 }
+    { x: 5, y: 6 },
   ];
   const qt = quadtree()
     .x(d => d.x)
