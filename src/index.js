@@ -1,5 +1,7 @@
 export { default as extentLimited } from './extentLimited';
 export { default as extentMulti } from './extentMulti';
+export { default as filterInRect } from './filterInRect';
+export { default as filterInRectFromQuadtree } from './filterInRectFromQuadtree';
 export { default as findClosestSorted } from './findClosestSorted';
 export { default as findClosestUnsorted } from './findClosestUnsorted';
 export { default as findEqualSorted } from './findEqualSorted';
