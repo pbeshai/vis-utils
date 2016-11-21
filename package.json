@@ -1,6 +1,6 @@
 {
   "name": "vis-utils",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Utility functions for data visualization",
   "main": "build/vis-utils.js",
   "author": "Peter Beshai <peter.beshai@gmail.com>",
