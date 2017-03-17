@@ -1,5 +1,5 @@
 const tape = require('tape');
-const findClosestUnsorted = require('../findClosestUnsorted').default;
+const findClosestUnsorted = require('../build/vis-utils').findClosestUnsorted;
 
 tape('findClosestUnsorted() finds correct value', (t) => {
   const values = [8, 9, 1, 2, 6, 3, 5, 4, 5, 10];

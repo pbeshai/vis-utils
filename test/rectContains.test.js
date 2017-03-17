@@ -1,5 +1,5 @@
 const tape = require('tape');
-const rectContains = require('../rectContains').default;
+const rectContains = require('../build/vis-utils').rectContains;
 
 tape('rectContains() correctly detects points within the rect', (t) => {
   t.ok(rectContains([[0, 0], [1, 1]], [0.5, 0.5]));
