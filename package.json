@@ -36,6 +36,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^7.1.0",
+    "buble": "^0.15.2",
     "d3-quadtree": "^1.0.1",
     "eslint": "^3.9.1",
     "eslint-config-airbnb-base": "^9.0.0",
