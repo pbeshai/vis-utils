@@ -1,5 +1,5 @@
 const tape = require('tape');
-const extentMulti = require('../extentMulti').default;
+const extentMulti = require('../build/vis-utils').extentMulti;
 
 tape('extentMulti() produces the correct value with defaults', (t) => {
   const outerArray = [

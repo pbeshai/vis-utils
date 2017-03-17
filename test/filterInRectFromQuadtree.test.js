@@ -1,6 +1,6 @@
 const tape = require('tape');
 const quadtree = require('d3-quadtree').quadtree;
-const filterInRectFromQuadtree = require('../filterInRectFromQuadtree').default;
+const filterInRectFromQuadtree = require('../build/vis-utils').filterInRectFromQuadtree;
 
 tape('filterInRectFromQuadtree() filters values in the rectangle', (t) => {
   const data = [[1, 2], [2, 3], [15, 12], [30, 40], [20, 19], [5, 6]];

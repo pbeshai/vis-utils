@@ -1,5 +1,5 @@
 const tape = require('tape');
-const extentLimited = require('../extentLimited').default;
+const extentLimited = require('../build/vis-utils').extentLimited;
 
 tape('extentLimited() produces the correct value with defaults', (t) => {
   const result = extentLimited([1, 0, 2, 9, 4]);

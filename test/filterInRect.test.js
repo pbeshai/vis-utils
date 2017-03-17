@@ -1,5 +1,5 @@
 const tape = require('tape');
-const filterInRect = require('../filterInRect').default;
+const filterInRect = require('../build/vis-utils').filterInRect;
 
 tape('filterInRect() filters values in the rectangle', (t) => {
   const data = [[1, 2], [2, 3], [15, 12], [30, 40], [20, 19], [5, 6]];
