@@ -31,6 +31,7 @@
     "test": "tape \"test/*.test.js\" | faucet",
     "test:raw": "tape \"test/*.test.js\"",
     "test:cov": "nyc tape \"test/*.test.js\"",
+    "btest": "rollup --config rollup.config.js && yarn run test",
     "prepublish": "npm run lint && npm run build && npm run test && uglifyjs build/vis-utils.js -c -m -o build/vis-utils.min.js",
     "postpublish": "zip -j build/vis-utils.zip -- LICENSE README.md build/vis-utils.js build/vis-utils.min.js"
   },
