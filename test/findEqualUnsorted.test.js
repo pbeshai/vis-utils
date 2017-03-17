@@ -1,5 +1,5 @@
 const tape = require('tape');
-const findEqualUnsorted = require('../findEqualUnsorted').default;
+const findEqualUnsorted = require('../build/vis-utils').findEqualUnsorted;
 
 tape('findEqualUnsorted() finds the value and returns it', (t) => {
   const values = [{ a: 4 }, { a: 2 }, { a: 1 }, { a: 10 }, { a: 3 }];

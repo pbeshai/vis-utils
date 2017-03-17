@@ -1,5 +1,5 @@
 const tape = require('tape');
-const findEqualSorted = require('../findEqualSorted').default;
+const findEqualSorted = require('../build/vis-utils').findEqualSorted;
 
 tape('findEqualSorted() finds the value and returns it', (t) => {
   const values = [1, 2, 3, 4, 10];

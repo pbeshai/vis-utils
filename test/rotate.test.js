@@ -1,5 +1,5 @@
 const tape = require('tape');
-const rotate = require('../rotate').default;
+const rotate = require('../build/vis-utils').rotate;
 
 // more lenient equals to handle floating point rounding error
 function approximatelyEqual(p1, p2) {

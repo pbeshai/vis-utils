@@ -1,5 +1,5 @@
 const tape = require('tape');
-const findClosestSorted = require('../findClosestSorted').default;
+const findClosestSorted = require('../build/vis-utils').findClosestSorted;
 
 tape('findClosestSorted() finds correct value', (t) => {
   t.equal(findClosestSorted([1, 2, 3, 4, 10], 3.49), 3);

@@ -1,5 +1,5 @@
 const tape = require('tape');
-const rectIntersects = require('../rectIntersects').default;
+const rectIntersects = require('../build/vis-utils').rectIntersects;
 
 tape('rectIntersects() correctly overlapping rectangles', (t) => {
   t.ok(rectIntersects([[1, 1], [4, 4]], [[2, 0], [3, 3]])); // top edge
