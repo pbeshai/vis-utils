@@ -33,6 +33,10 @@ If you use NPM, `npm install vis-utils`. Otherwise, download the [latest release
 - [`findClosestUnsorted`](#findClosestUnsorted)
 - [`findEqualSorted`](#findEqualSorted)
 - [`findEqualUnsorted`](#findEqualUnsorted)
+- [`interpolateCubicBezier`](#interpolateCubicBezier)
+- [`interpolateCubicBezierAngle`](#interpolateCubicBezierAngle)
+- [`interpolateQuadraticBezier`](#interpolateQuadraticBezier)
+- [`interpolateQuadraticBezierAngle`](#interpolateQuadraticBezierAngle)
 - [`rectContains`](#rectContains)
 - [`rectIntersects`](#rectIntersects)
 - [`rotate`](#rotate)
@@ -193,6 +197,75 @@ Since it assumes the data is unsorted, it does a linear scan O(n).
 **Returns**
 
 *(Any)* The item in the array that has this value or null if not found
+
+### <a href="#interpolateCubicBezier" name="interpolateCubicBezier">#</a> interpolateCubicBezier(start, control1, control2, end)
+
+Given the definition of a cubic bezier: a start point, two control points,
+and end point, return a function that interpolates between the start point
+and end point following the curve.
+
+**Parameters**
+- **start** *(Number[])* The start point ([x, y])
+- **control1** *(Number[])* The first control point ([x, y])
+- **control2** *(Number[])* The second control point ([x, y])
+- **end** *(Number[])* The end point ([x, y])
+
+**Returns**
+*(Function)* the interpolating function that maps from 0 <= t <= 1 to
+  a point on the curve.
+
+### <a href="#interpolateCubicBezierAngle" name="interpolateCubicBezierAngle">#</a> interpolateCubicBezierAngle(start, control1, control2, end)
+
+Given the definition of a cubic bezier: a start point, two control points,
+and end point, return a function that interpolates the angle on the curve.
+For example, at t = 0, the interpolator returns the angle at the start
+point, at t = 0.5, it returns the angle midway through the curve and at
+t = 1 it returns the angle at the end of the curve (useful for things like
+arrowheads). The angles are in degrees.
+
+**Parameters**
+- **start** *(Number[])* The start point ([x, y])
+- **control1** *(Number[])* The first control point ([x, y])
+- **control2** *(Number[])* The second control point ([x, y])
+- **end** *(Number[])* The end point ([x, y])
+
+**Returns**
+*(Function)* the interpolating function that maps from 0 <= t <= 1 to
+an angle in degrees along the curve.
+
+### <a href="#interpolateQuadraticBezier" name="interpolateQuadraticBezier">#</a> interpolateQuadraticBezier(start, control, end)
+
+Given the definition of a quadratic bezier: a start point, control point,
+and end point, return a function that interpolates between the start point
+and end point following the curve.
+
+**Parameters**
+- **start** *(Number[])* The start point ([x, y])
+- **control** *(Number[])* The control point ([x, y])
+- **end** *(Number[])* The end point ([x, y])
+
+**Returns**
+*(Function)* the interpolating function that maps from 0 <= t <= 1 to
+  a point on the curve.
+
+### <a href="#interpolateQuadraticBezierAngle" name="interpolateQuadraticBezierAngle">#</a> interpolateQuadraticBezierAngle(start, control, end)
+
+Given the definition of a quadratic bezier: a start point, control point,
+and end point, return a function that interpolates the angle on the curve.
+For example, at t = 0, the interpolator returns the angle at the start
+point, at t = 0.5, it returns the angle midway through the curve and at
+t = 1 it returns the angle at the end of the curve (useful for things like
+arrowheads). The angles are in degrees.
+
+**Parameters**
+- **start** *(Number[])* The start point ([x, y])
+- **control** *(Number[])* The control point ([x, y])
+- **end** *(Number[])* The end point ([x, y])
+
+**Returns**
+*(Function)* the interpolating function that maps from 0 <= t <= 1 to
+an angle in degrees along the curve.
+
 
 ### <a href="#rectContains" name="rectContains">#</a> rectContains(rect, point)
 
